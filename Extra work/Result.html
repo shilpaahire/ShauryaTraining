@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Task6</title>
+        <script>
+            var totalmark = 400;
+            var p = 100;
+            var first = parseInt(prompt("Enter 1st subject marks : ",35));
+            var second = parseInt(prompt("Enter 2nd subject marks : ",35));
+            var third = parseInt(prompt("Enter 3rd subject marks : ",35));
+            var fourth = parseInt(prompt("Enter 4th subject marks : ",35));
+            var fifth= parseInt(prompt("Enter 5th subject marks : ",35));
+
+            var add = function(first,second,third,fourth,fifth)
+            {
+                return (first + second + third + fourth + fifth);
+            }
+            var total = add(first, second, third, fourth, fifth);
+            document.write("Total marks of all subject id: " + total + " out of 400");
+
+            document.write("<br>");
+            var per = function(total,totalmark,p)
+            {
+                return ((total/totalmark)*p);
+            }
+            var percentage = per((total/400)*100);
+            document.write("Percentage : " + percentage);
+
+            document.write("<br>");
+            if(percentage<45)
+            {
+                document.write("D");
+            }
+            else if(percentage<60)
+            {
+                document.write("C");
+            }
+            else if(percentage<75)
+            {
+                document.write("B");
+            }
+            else if(percentage<90)
+            {
+                document.write("A");
+            }
+            else if(percentage<100)
+            {
+                document.write("A+");
+            }
+            else
+            {
+                document.write("Fail");
+            }
+            
+        </script>
+    </head>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Task3</title>
+        <script>
+            var num = parseInt(prompt("Enter the number : " , 121));
+            var temp;
+            var res = 0;
+            temp = num;
+            while(num>0)
+            {
+                var rem = num%10;
+                res = res*10+rem;
+                num = num/10;
+            }
+            if(res==temp)
+            {
+                document.write(num + " is Palindrome");
+            }
+            else
+            {
+                document.write(num + " is not Palindrome");
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Welcome on Web Page</h2>
+    </body>
+</html>

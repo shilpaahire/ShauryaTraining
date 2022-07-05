@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Task7</title>
+        <script>
+            var amount = parseInt(prompt("Enter your salary : ",10000));
+
+                function calculate(amount)
+                {
+                    var hra = (0.15*amount);
+                    var pf = (0.07*amount);
+                    var da = (0.2*amount);
+
+                    var netsal = ((amount)+parseInt(hra)+parseInt(pf)+parseInt(da));
+
+                    document.write("hra : " + hra);
+                    document.write("<br>");
+                    document.write("pf : " + pf);
+                    document.write("<br>");
+                    document.write("da : " + da);
+                    document.write("<br>");
+
+                    document.write("Net salary : " + netsal);
+
+                }
+
+                calculate(amount);
+            
+        </script>
+    </head>
+</html>
