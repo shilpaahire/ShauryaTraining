@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Assignment3</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/Java Script/main.css">
+    </head>
+    <body>
+        <div class="bg-primary text-white box1">This is first div</div>
+        <div class="bg-danger text-white">This is second div</div>
+        <div class="bg-info text-white box3">This is paragraph</div>
+
+        <div class="bg-info box3">This is div content</div>
+        <p class="bg-info text-white box3">This is paragraph</p>
+    </body>
+</html>
+<script>
+    $(document).ready(function()
+    {
+        $(".text-white").click(function()
+        {
+            var Result = $(this);
+            console.log("div has clicked",Result);
+        })
+
+        // $("div.box3").click(function()
+        // {
+        //     var Result = $(this);
+        //     console.log("paragraph has clicked", Result);
+        // })
+
+    })
+</script>

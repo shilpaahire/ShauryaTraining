@@ -1,0 +1,41 @@
+<script>
+    function countWords(input)
+    {
+        if(input==null || input.length==0)
+            return 0;
+           
+        let count = 0;
+           
+        let isWord = false;
+        let last = input.length - 1;
+
+        let ch = input.split("");
+           
+           for (let i = 0; i < ch.length; i++)
+           {
+            if (isLetter(ch[i]) && i != last)
+            {
+                isWord = true;
+            }
+            else if (!isLetter(ch[i]) && isWord) 
+            {
+                count++;
+                isWord = false;
+            }
+            else if (isLetter(ch[i]) && i == last)
+            {
+                count++;
+            }
+           }
+           return count;
+    }
+    
+    function isLetter(c) 
+    {
+        return c.toLowerCase() != c.toUpperCase();
+    }
+    let input="One, two, three, four, five ";
+    document.write("Input String : " + input);
+    document.write("<br>");
+    document.write("No of words : " + countWords(input));
+</script>

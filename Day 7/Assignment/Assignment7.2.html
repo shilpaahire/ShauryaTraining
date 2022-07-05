@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Assignment2</title>
+        <link rel="stylesheet" href="bootstrap.min.css">
+    </head>
+    <body>
+        <label>Words : </label>
+        <input type="text" placeholder="Enter string" id="name">
+
+        <div>
+            <button onclick="countWord()">Check Count</button>
+        </div>
+
+        <script>
+            function countWord()
+            {
+                console.log("Going to start the program");
+                if(input==null || input.length==0)
+                {
+                    return 0;
+                }
+                let count=0;
+                let isWord=false;
+                let last=input.length-1;
+        
+                let ch=input.split("");
+                for(let i=0;i<ch.length;i++)
+                {
+                    if(isLetter(ch[i])&&(i!=last))
+                    {
+                        isWord=true;
+                    }
+                    else if(!isLetter(ch[i])&&isWord)
+                    {
+                        count++;
+                        isWord=false;
+                    }
+                    else if(isLetter(ch[i]&&i==last))
+                    {
+                        count++;
+                    }
+                    return count;
+                }
+        
+                function isLetter(ch)
+                {
+                    return ch.toLowerCase()!=ch.toUpperCase();
+                }
+                var a = document.getElementById("name").value;
+                document.write("No of words : " + countWord(a));
+            }
+        </script>
+    </body>
+</html>
+
