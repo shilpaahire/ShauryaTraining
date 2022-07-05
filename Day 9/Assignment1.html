@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment1</title>
+</head>
+<body>
+    <h4>Occurance of Values :</h4>
+    <p>Input : [10,20,30,20,40,50,20,30,50,60,50,80,90]</p>
+    <p id="msg"></p>
+</body>
+</html>
+<script>
+    const arrData=[10,20,30,20,40,50,20,30,50,60,50,80,90];
+    const counts={};
+    arrData.forEach((a)=>
+    {
+        counts[a] = (counts[a] || 0) + 1;
+    });
+   
+    document.getElementById("msg").innerHTML = "Output : " + JSON.stringify(counts);
+      
+</script>

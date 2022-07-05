@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment2</title>
+</head>
+<body>
+    <button onclick="CallDisplay()">Call Display</button>
+</body>
+</html>
+
+<script>
+    function Display(a,b,c)
+    {
+        c();
+        console.log("Display ",a,b);
+    }
+    function cb1()
+    {
+        console.log("callback is triggered");
+    }
+    function CallDisplay()
+    {
+        Display(10,20,cb1);
+    }
+</script>
