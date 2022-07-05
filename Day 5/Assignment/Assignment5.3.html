@@ -1,0 +1,39 @@
+<html>
+    <heaad>
+        <title>Assignment3</title>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    </heaad>
+    <body>
+        <div class="container">
+            <h4>Sing Up</h4>
+            <div class="form-group">
+                <label>Mobile No : </label>
+                <input type="number" class="form-control" id="mobno">
+                <span class="alert-danger" id="msg1">Please Enter first value</span>
+            </div>
+            <div class="form-group">
+                <label>Password :  </label>
+                <input type="password" class="form-control" id="pass">
+                <span class="alert-danger" id="msg2">Please Enter second number</span>
+            </div>
+            <div class="form-group">
+                <label>Display Name :  </label>
+                <input type="text" class="form-control" id="nme">
+            </div>
+            
+            <div class="form-group">
+                <button class="btn btn-primary" class="form-control" id="link">Submit</button>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    document.getElementById("msg1").style.display = 'none';
+    document.getElementById("msg2").style.display = 'none';
+    // document.getElementById("link").innerHTML = window.location="SingUp.html";
+    //window.location="SignUp.html";
+</script>
