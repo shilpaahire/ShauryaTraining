@@ -1,0 +1,165 @@
+<html>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Assignment3</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <style>
+                .button-container-div
+                {
+                    width : 100px;
+                    height : 100px;
+                    margin : auto;
+                }
+                .p
+                {
+                    width : 200px;
+                    height : 200px;
+                    margin : auto;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container-fluid">
+                <div class="row">
+                <div class="col-lg-12 bg-dark text-white">
+                <h1 style="text-align:center;">We need to start the below three servers</h1>
+              </div>
+            </div>
+            <div class="button-container-div">
+                <button class="btn btn-primary" onclick="Server1Start()">Server 1</button>
+            </div>
+            <div class="button-container-div">
+                <button class="btn btn-primary" onclick="Server2Start()">Server 2</button>
+            </div>
+            <div class="button-container-div">
+                <button class="btn btn-primary" onclick="Server3Start()">Server 3</button>
+            </div>
+            <div class="button-container-div">
+                <button class="btn btn-success" onclick="onLoad()">Check</button>
+            </div>
+        </div>
+        <p id="msg" class="p"></p>
+        </body>
+</html>
+
+<script>
+    // var ServerStatus = true;
+    // function ServerStart() 
+    // {
+    //     ServerStatus = true;
+    // }
+    // function ServerStop() 
+    // {
+    //     ServerStatus = false;
+    // }
+
+    // function onLoad() {
+    //     document.getElementById("msg").innerHTML = "";
+    //     var prom = new Promise((Resolve, Reject) => {
+    //         if (ServerStatus) {
+    //             setTimeout(() => {
+    //                 Resolve("Resolved");
+    //             }, 2000)
+    //         }
+    //         else {
+    //             setTimeout(() => {
+    //                 Reject("Server not responding ");
+    //             }, 2000)
+    //         }
+
+    //     })
+
+    // prom.then(data => 
+    //     {
+    //         document.getElementById("msg").innerHTML="All server are running";
+    //     }).catch(err => {
+    //         document.getElementById("msg").innerHTML="Server not running";
+    //     })
+    // }
+
+    var ServerStatus1 = false;
+    var ServerStatus2 = false;
+    var ServerStatus3 = false;
+
+    function Server1Start()
+    {
+        ServerStatus1 = true;
+    }
+    function Server2Start()
+    {
+        ServerStatus2 = true;
+    }
+    function Server3Start()
+    {
+        ServerStatus3 = true;
+    }
+
+    function onLoad()
+    {
+        var prom1 = new Promise((Resolve, Reject)=>
+        {
+            if(ServerStatus1)
+            {
+                setTimeout(()=>
+                {
+                    Resolve("Server 1 is running");
+                })
+            }
+            else{
+                setTimeout(()=>
+                {
+                    Reject("Server 1 is not running");
+                })
+            }
+        })
+
+        var prom2 = new Promise((Resolve, Reject)=>
+        {
+            if(ServerStatus2)
+            {
+                setTimeout(()=>
+                {
+                    Resolve("Server 2 is running");
+                })
+            }
+            else{
+                setTimeout(()=>
+                {
+                    Reject("Server 2 is not running");
+                })
+            }
+        })
+
+        var prom3 = new Promise((Resolve, Reject)=>
+        {
+            if(ServerStatus3)
+            {
+                setTimeout(()=>
+                {
+                    Resolve("Server 3 is running");
+                })
+            }
+            else{
+                setTimeout(()=>
+                {
+                    Reject("Server 3 is not running");
+                })
+            }
+        })
+
+        Promise.all([prom1,prom2,prom3]).then((data)=>
+        {
+            document.getElementById("msg").innerHTML = "All servers are running";
+        }).catch(err=>
+        {
+            document.getElementById("msg").innerHTML = "Failed : " + err;
+        })
+
+    }
+
+</script>

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Assignment2</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <style>
+             .button-container-div
+                {
+                    width : 100px;
+                    height : 100px;
+                    margin : auto;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+          <div class="col-lg-12 bg-dark text-white">
+            <h1 style="text-align:center;">JQuery Effect</h1>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div style="text-align:center;font-size:xx-large;" ><strong>fadeIn</strong></div>
+                <div id="box1" class="bg-primary text-white p-5" >This is Box1</div>
+            </div>
+            <div class="col-md-4">
+                <div style="text-align:center; font-size:xx-large;" ><strong>fadeOut</strong></div>
+                <div id="box2" class="bg-info text-white p-5" style="display:none">This is Box2</div>
+            </div>
+            <div class="col-md-4">
+                <div style="text-align:center; font-size:xx-large;" ><strong>fadeIn</strong></div>
+                <div id="box3" class="bg-secondary text-white p-5" >This is Box3</div>
+            </div>
+            <br><br>
+                <div class="button-container-div">
+                <!-- <button id="btnshow">Effect</button> -->
+                <button class="btn btn-success" id="effect">Execute</button>
+            </div> 
+        </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    $(document).ready(function()
+    {
+        $("#effect").click(function()
+        {
+            $("#box1").fadeOut(2000);
+            $("#box2").fadeIn(2000);
+            $("#box3").fadeOut(2000);
+        })
+    })
+</script>
