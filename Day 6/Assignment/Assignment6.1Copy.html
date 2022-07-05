@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+	<title>Assignment 1</title>
+</head>
+<body>
+	<input id="searchbar" onkeyup="search_langu()" type="text"
+		name="search" placeholder="Search Language..">
+	
+	<ol id='list'>
+		<li class="language">Angular</li>
+		<li class="language">HTML</li>
+		<li class="language">C++</li>
+		<li class="language">C</li>
+		<li class="language">Java</li>
+		<li class="language">C#</li>
+		<li class="language">JavaScript</li>
+		<li class="language">BootStrap</li>
+		<li class="language">ReactJS</li>
+		<li class="language">jQuery</li>
+	</ol>
+	
+</body>
+
+</html>
+<script>
+function search_langu() {
+	let input = document.getElementById('searchbar').value
+	input=input.toLowerCase();
+	let x = document.getElementsByClassName('language');
+	
+	for (i = 0; i < x.length; i++) {
+		if (!x[i].innerHTML.toLowerCase().includes(input)) {
+			x[i].style.display="none";
+			//document.write("Valid Language");
+		}
+		else {
+			x[i].style.display="list-item";	
+			//document.write("Invalid Language");			
+		}
+	}
+}
+</script>

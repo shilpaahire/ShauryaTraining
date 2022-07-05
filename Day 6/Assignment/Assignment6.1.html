@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Assignment1</title>
+    </head>
+    <body>
+        <p id="p1">Welcome on this window</p>
+        <label>Search : </label>
+        <input type="text" onkeyup="Display(event)" placeholder="Search here">
+    </body>
+</html>
+
+<script>
+    function Display(event) {
+    let val = event.target.value;
+    let language = ["Angular", "React JS", "JavaScript", "HTML", "CSS", "ES6", "jQuery", "Ajax"];
+    for(let i=0;i<language.length;i++)
+    {
+        if(language[i]===val)
+        {
+            //document.write("Vaild Language");
+            console.log("Valid Language");
+            break;
+        }
+        else
+        {
+            //document.write("Not a valid Language");
+            console.log("Invalid Language");
+        }
+    }
+}
+</script>

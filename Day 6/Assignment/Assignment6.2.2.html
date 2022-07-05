@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Assignment2</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <p id="p1">Select any Language from given below : </p>
+        <select onchange="Display(event)">
+        <option>Select</option>
+        <option>Front End Language</option>
+        <option>Back End Language</option>
+    </select>
+    <p id="result">Please select your choice</p>
+    </body>
+</html>
+
+<script>
+    function Display(event)
+    {
+        console.log("Select", event.target.value);
+        if(event.target.value === "Front End Language")
+        {
+            document.getElementById("result").innerHTML = "HTML, CSS, JavaScript";
+        }
+        else if(event.target.value === "Back End Language")
+        {
+            document.getElementById("result").innerHTML = "Java, Python, PHP, C, C++";
+        }
+    }
+</script>
