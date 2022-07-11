@@ -1,0 +1,88 @@
+<h1>Day 13 Assignment2</h1>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="mt-4">
+          <h4>
+            Employee Leave Request <span><em>( assignment 2 )</em></span>
+          </h4>
+        </div>
+        <div class="mt-4 form-group">
+          <label for="empcode">Employee Code</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="emp code here..."
+            [(ngModel)]="empcode"
+          />
+          <span *ngIf="empcode.length <= 4" class="bg-warning"
+            >must be greater than 4</span
+          >
+          <span *ngIf="empcode.length >= 8" class="bg-danger"
+            >must be less than 8</span
+          >
+        </div>
+        <div class="mt-4 form-group">
+          <label for="empcode">Employee Department</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="emp dept here..."
+            [(ngModel)]="empdept"
+          />
+          <span *ngIf="empdept.length === 0" class="bg-warning"
+            >dept field should be not empty</span
+          >
+        </div>
+        <div class="mt-4">
+          <button class="btn btn-primary btn-sm" (click)="onSend()">
+            Send
+          </button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="mt-4 text-center">
+          <h4>
+            code : <span>{{ empcode }}</span>
+          </h4>
+        </div>
+        <div class="mt-4 text-center">
+          <h4>
+            dept : <span>{{ empdept }}</span>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
