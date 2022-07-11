@@ -1,0 +1,32 @@
+
+<h1 style="background-color:lightgray;text-align: center;">Assignment 2</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label style="font-weight:bolder;font-size:x-large;">Enter the Number : </label>
+                <input type="text" class="form-control" [(ngModel)]="num">
+            </div>
+            <div class="text-center">
+            <div [ngSwitch]="num">
+                <h4 *ngSwitchCase="100">One Hundred</h4>
+                <h4 *ngSwitchCase="101">One Hundred One</h4>
+                <h4 *ngSwitchCase="102">One Hundred Two</h4>
+                <h4 *ngSwitchCase="103">One Hundred Three</h4>
+                <h4 *ngSwitchCase="104">One Hundred Four</h4>
+                <h4 *ngSwitchCase="105">One Hundred Five</h4>
+                <h5 *ngSwitchDefault>Please enter number in between 100 to 105</h5>
+            </div>
+            <!-- <h4 *ngIf="num===100">One Hundred</h4> -->
+            
+        </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+
+
+
