@@ -1,0 +1,35 @@
+<h3 style="background-color:lightgray;">Day 13 Assignment2</h3>
+
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="mt-4">
+          <h4>Employee Leave Request</h4>
+        </div>
+        <div class="mt-4 form-group">
+          <label for="empcode">Employee Code</label>
+          <input type="text" class="form-control" placeholder="emp code here..." [(ngModel)]="empcode"/>
+          <span *ngIf="empcode.length <= 4" class="bg-warning"
+            >Employee Code should be greater than 4</span>
+          <span *ngIf="empcode.length >= 8" class="bg-danger">must be less than 8</span>
+        </div>
+        <div class="mt-4 form-group">
+          <label for="empcode">Employee Department</label>
+          <input type="text" class="form-control" placeholder="emp dept here..." [(ngModel)]="empdept"/>
+          <span *ngIf="empdept.length === 0" class="bg-warning"
+            >Department field should not be empty</span>
+        </div>
+        <div class="mt-4">
+          <button class="btn btn-primary btn-sm" (click)="onSend()">Send</button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="mt-4 text-center">
+          <h4>code : <span>{{ empcode }}</span></h4>
+        </div>
+        <div class="mt-4 text-center">
+          <h4> dept : <span>{{ empdept }}</span></h4>
+        </div>
+      </div>
+    </div>
+  
