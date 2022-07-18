@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row mt-4">
+       <div class="col-4"></div>
+       <div class="col-4">
+      <form [formGroup]="formUser" (ngSubmit)="onSubmit(formUser.value)">
+       <div style="text-align: center;"><h4>Contact Form </h4></div>
+       <div class="form-group"><br>
+           <label style="font-weight: bold;">Contact ID :</label>
+           <input type="text" class="form-control" formControlName="ContactId" placeholder="Enter your ID"/>
+       </div>
+       <div class="form-group">
+           <label style="font-weight: bold;">Contact Name :</label>
+           <input type="text" class="form-control" formControlName="ContactName" placeholder="Enter your Name"/>
+       </div>
+       <div class="form-group">
+           <label style="font-weight: bold;">Address :</label>
+           <input type="text" class="form-control" formControlName="Address" placeholder="Enter your Address"/>
+       </div>
+       <div class="form-group">
+           <label style="font-weight: bold;">Pincode :</label>
+           <input type="text" class="form-control" formControlName="Pincode" placeholder="Enter Pincode"/>
+       </div>
+       <div class="form-group">
+          <button class="btn btn-success">Submit</button>
+       </div>
+       
+      </form>
+      </div>
+    </div>
+   </div>

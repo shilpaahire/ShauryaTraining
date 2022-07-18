@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row mt-4">
+       <div class="col-4"></div>
+       <div class="col-4">
+
+    <h5>Counter Value : {{count}}</h5>
+    <button class="btn btn-success ml-2" (click)="onCounterHandler()">Counter</button>
+    <button class="btn btn-success ml-2" (click)="onDestroyHandler()">Destroy Child</button>
+
+<div>
+    <app-display2 *ngIf="childShow" [propCounter]="count"></app-display2>
+</div>
+</div>
+</div>
+</div>

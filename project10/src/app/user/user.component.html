@@ -1,0 +1,11 @@
+<div class="container" style="text-align:center;"><br><br>
+    <label style="font-weight: bold;">Enter Name : </label>
+    <input type="text" [(ngModel)]="Name"/><br><br>
+    <button class="btn btn-success ml-2"  (click)="onClickHandler()" >Submit</button>
+    <button class="btn btn-danger ml-2" (click)="onDestroyHandler()">Destroy UserDetails </button>
+  <hr>
+    <h5>User-Name : {{Name}}</h5>
+</div>
+<div>
+    <app-user-details *ngIf="childShow" [propuserName]="Name"></app-user-details>
+</div>

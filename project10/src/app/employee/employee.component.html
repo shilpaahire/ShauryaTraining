@@ -1,0 +1,7 @@
+<div class="container" style="text-align: center;">
+    <p>employee works</p>
+    <button class="btn btn-danger" (click)="onDestroyHandler()">Destroy Child </button>
+</div>
+<div>
+    <app-emp-details *ngIf="childShow"></app-emp-details>
+</div>
