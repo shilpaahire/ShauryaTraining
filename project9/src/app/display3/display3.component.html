@@ -1,0 +1,13 @@
+<hr>
+<h2 style="text-shadow:2px 1px 3px darkblue; text-align: center;">Custom Pipe Table - *ngFor</h2>
+<hr>
+<table class="table table-striped">
+    <th>User ID</th>
+    <th>User Name</th>
+    <th>User Status</th>
+<tr *ngFor="let user of arrUser">
+    <td>{{user.userid}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.userstatus | userstatus}}</td>
+</tr>
+</table>
