@@ -1,0 +1,26 @@
+<hr>
+<h1 style="text-align:center;background-color:lightgray;">Assignment 3</h1>
+<hr>
+<h5>User List</h5>
+<div>
+    <table class="table">
+        <thead>
+            <th>User Id</th>
+            <th>Display Name</th>
+            <th>Details</th>
+        </thead>
+       <tbody *ngFor="let user of UserData">
+        <tr >
+            <td>{{user.userid}}</td>
+            <td>{{user.displayName}}</td>
+            <td><button class="btn btn-info text-white" (click)="onDetails(user.userid)">Details</button></td>
+        </tr>
+        <tr *ngIf="selectedUserId === user.userid">
+            <td colspan="4">
+                <app-user-details [Propuser]="user"></app-user-details>
+            </td>
+        </tr>
+       </tbody>
+        
+    </table>
+</div>
