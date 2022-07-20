@@ -1,0 +1,45 @@
+<hr>
+<h4 style="text-align:center;">Employee List</h4>
+<div class="row">
+    <div class="col-6">
+        <table class="table table-striped">
+            <thead>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Designation</th>
+            <th>Salary</th>
+            <th>Transfer</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of EmpData">
+                <td>{{emp.empid}}</td>
+                <td>{{emp.empname}}</td>
+                <td>{{emp.designation}}</td>
+                <td>{{emp.salary}}</td>
+                <td><button class="btn btn-secondary" (click)="onShift(emp)">Transfer</button></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <div class="col-6">
+        <table class="table table-striped">
+            <thead>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Designation</th>
+            <th>Salary</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let newemp of NewEmpData">
+                <td>{{newemp.empid}}</td>
+                <td>{{newemp.empname}}</td>
+                <td>{{newemp.designation}}</td>
+                <td>{{newemp.salary}}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+</div>
+
