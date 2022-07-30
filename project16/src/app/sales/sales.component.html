@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-6">
+        <div>
+            <table class="table">
+                <thead>
+                    <th>Sales ID</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sale of SalesData">
+                        <td>{{sale.saleid}}</td>
+                        <td>{{sale.productname}}</td>
+                        <td>{{sale.price}}</td>
+                    </tr>
+                </tbody>    
+            </table>
+            </div>
+    </div>
+    <div class="col-6">
+        <router-outlet></router-outlet>
+    </div>
+</div>
