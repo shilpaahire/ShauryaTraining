@@ -1,0 +1,188 @@
+<form [formGroup]="formFilter" (ngSubmit)="submitFillterForm()">
+    <div class="comtainer-fluid mi-4 mr-4">
+        <div class="row box mt-3 pt-2 ml-1" style="background-color: rgb(116, 247, 247);">
+            <div class="col-2 ml-5 pt-3">
+                <div class="form-group">
+                    <select class="form-control" (change)="getAllDivision($event)" formControlName="stateId">All States
+                        <option *ngFor="let state of stateData" value="{{state.id}}">
+                            <input type="number" />{{state.state}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-2 ml-5 pt-3">
+                <div class="form-group">
+                    <select class="form-control" (change)="getAllDistrict($event)" formControlName="divisionId">Division
+                        <option *ngFor="let division of divisionData" value="{{division.id}}">
+                            <input type="number">{{division.division}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-2 ml-3 pt-3">
+                <div class="form-group">
+                    <select class="form-control" formControlName="districtId">District
+                        <option *ngFor="let district of districtData" value="{{district.id}}">
+                            <!-- It will not accept the choice because of diabled has used -->
+                            <input type="number">{{district.district}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-2 ml-3 pt-3">
+                <div class="form-group">
+                    <select class="form-control" formControlName="organizationId">Department
+                        <option *ngFor="let department of departmentData" value="department.id">
+                            {{department.name}}
+                            <!-- <input type=""> -->
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2 text-sm-right text-center">
+                <button class="btn btn-secondary" type="submit">Apply</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+<body>
+    <div class="wrapper">
+        
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="container-fluid">
+                        <div class="row mt-3">
+                            <div class="col-9">
+                                <table class="table table striped">
+                                    <thead>
+                                        <th>Sr.No</th>
+                                        <th>Department</th>
+                                        <th>Office</th>
+                                        <th>Person</th>
+                                        <th>Mobile No</th>
+                                        <th>District</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let data of filterResult">
+                                            <td>{{data.rowNumber}}</td>
+                                            <td>{{data.organizationName}}</td>
+                                            <td>{{data.name}}</td>
+                                            <td>{{data.contactPersonName}}</td>
+                                            <td>{{data.mobileNo}}</td>
+                                            <td>{{data.district}}</td>
+                                            <td><button class="btn btn-info btn-sm" (click)="editForm(data)">EDIT</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                            <div class="col-3 border">
+                                <h4 class="text text-primary" style="font-weight:bold;">Office Details</h4>
+                                <hr>
+                                <div>
+                                    <form [formGroup]="mahaminForm" (ngSubmit)="onSubmit(mahaminForm)">
+                                        <div class="form-group">
+                                            <label>Department :-</label>
+                                            <select class="ml-2" formControlName="organizationId">Maharashtra 
+                                                <option value="">Department</option>
+                                                <option value="{{dept.id}}" *ngFor="let dept of departmentData">
+                                                    {{dept.name}}</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Office Name :-</label>
+                                            <input class="ml-2" type="text" formControlName="name"
+                                                placeholder="Office Name" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Landline No :-</label>
+                                            <input type="number" class="ml-2" formControlName="landlineNo"
+                                                placeholder="0123456789" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Email Id :-</label>
+                                            <input type="text" class="ml-4" formControlName="emailId"
+                                                placeholder="abc@xyz.com" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>State :-</label>
+                                            <select class="ml-5" formControlName="stateId"
+                                                (change)="getAllDivision($event)">
+                                                <option value="">All State</option>
+                                                <option *ngFor="let state of stateData" value="{{state.id}}">
+                                                    {{state.state}}
+                                                </option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Division :-</label>
+                                            <select class="ml-4" formControlName="divisionId"
+                                                (change)="getAllDistrict($event)">
+                                                <option value="">Division</option>
+                                                <option value="{{division.id}}" *ngFor="let division of divisionData">
+                                                    <input type="text" />{{division.division}}
+                                                </option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>District :-</label>
+                                            <select class="ml-4" formControlName="districtId">
+                                                <option value="">District</option>
+                                                <option value="{{district.id}}" *ngFor="let district of districtData">
+                                                    <input type="text" />{{district.district}}
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Address :-</label>
+                                            <input type="text" class="ml-3" formControlName="address"
+                                                placeholder="Street Address,Area" />
+                                        </div>
+
+                                        <hr class=" mt-2">
+                                        <div>
+                                            <h4 class="text text-primary">Contact Person Details</h4>
+
+                                            <div class="form-group">
+                                                <label>Person Name:</label>
+                                                <input type="text" class="ml-2" formControlName="contactPersonName"
+                                                    placeholder="Person Name">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Mobile No.:</label>
+                                                <input type="number" class="ml-4" formControlName="mobileNo"
+                                                    placeholder="9999999999">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <button class="btn btn-secondary ml-2" type="reset">CLEAR</button>
+                                                <button class="btn btn-secondary ml-2" type="submit">SUBMIT</button>
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</body>

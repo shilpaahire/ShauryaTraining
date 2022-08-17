@@ -1,0 +1,82 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- <div class="col-1"></div> -->
+        <div class="col-3">
+            <h3>New User Form</h3>
+            <hr>
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+                <div class="form-group">
+                    <label>Name : </label>
+                    <input type="text" placeholder="Enter name" class="form-control"  formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label >Mobile No : </label>
+                    <input type="number" placeholder="Enter Mobile no" class="form-control" formControlName="mobileno">
+                </div>
+                <div class="form-group">
+                    <label >Gender : </label>
+                    <ng-container *ngFor="let gender of GenderArr" >
+                    <input type="radio"  formControlName="gender" value="{{gender}}" class="ml-3">
+                    <span class="radio-label ml-2" >{{gender}}</span>
+                </ng-container>
+                </div>
+                <div class="form-group">
+                    <label  >Education : </label>
+                    <select formControlName="education"  class="ml-3 form-control">
+                        <option >Select</option>
+                        <option value="BA" >BA</option>
+                        <option value="BSc" >BSc</option>
+                        <option value="MCA" >MCA</option>
+                        <option value="BE">BE</option>                       
+                    </select>                  
+
+                </div>
+                <div class="form-group">
+                    <label >Course Complate : </label>
+                    <input type="checkbox" name="angular" (change)="onCheck($event)" class="ml-3">
+                    <span>Angular</span>
+                    <input type="checkbox" name="dotnet" (change)="onCheck($event)" class="ml-3">
+                    <span>Dot Net</span>
+                    <!-- <ng-container *ngFor="let course of courseArr">
+                        <input type="checkbox"  formControlName="course" value="{{course}}">
+                        <span class="checked ml-3" >{{course}}</span>
+                    </ng-container> -->
+                </div>
+                <div class="form-group mt-4">
+                    <button type="reset" class="btn btn-dark" >Cancal</button>
+                    <button type="submit" class="ml-3 btn btn-success">Submit</button>
+
+                </div>
+
+            </form>
+        </div>
+
+        <div class="col-9">
+            <h3>User Details</h3>
+            <table class="table table-bordar">
+                <thead>
+                    <th>Sr.no</th>
+                    <th>Name</th>
+                    <th>Mobile No</th>
+                    <th>Gender</th>
+                    <th>Education</th>
+                    <th>Courses</th>
+                    <th class="pl-5">Action</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of UserData">
+                        <td>{{user.id}}</td> 
+                        <td>{{user.name}}</td>        
+                        <td>{{user.mobileno}}</td>     
+                        <td>{{user.gender}}</td> 
+                        <td>{{user.course}}</td> 
+                        <td>{{user.education}}</td>
+                        <td><button (click)="onUpdate(user)" class="btn btn-info">Edit</button>
+                            <button (click)="onDelete(user.id)" class="btn btn-danger ml-2">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
