@@ -1,0 +1,108 @@
+<hr>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <p>Available Vehicle</p>
+    <div class="container ">
+
+      <div class="row">
+        <div class="col-10">
+          <div>
+            <input type="text" class="form-control" [(ngModel)]="textSearch" id="searchBar" placeholder="Search..." />
+          </div>
+        </div>
+
+        <div class="col-2">
+          <button class="btn btn-info text-white " data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-dismiss="modal" id="cancel"><strong>+ Add</strong></button>
+        </div>
+      </div>
+
+
+
+    </div>
+    <br>
+
+    <table class="table table-striped">
+      <tbody>
+        <tr *ngFor="let vehicle of vehicleData | gridFilter:textSearch">
+          <td><small>Vehicle Number : </small>{{vehicle.vehicleNumber}}</td>
+          <td>{{vehicle.vehicleRoute}}</td>
+          <td><small>Date : </small>{{vehicle.vehicleDate}}</td>
+          <td><small>Time : </small>{{vehicle.vehicleTime}}</td>
+          <td>
+            <div>
+              <i (click)="onEdit(vehicle)" class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                id="pencil"></i>
+
+              <i (click)="deleteDetail(vehicle)" class="fas fa-trash-alt" data-bs-toggle="modal" data-bs-target="#exam"
+                id="trash"></i>
+
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">{{formStatus == 'Add'? 'Add':'Update'}} Vehicle</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label>Vehicle Number : </label>
+              <input type="text" class="form-control" formControlName="vehicleNumber" placeholder="Vehicle Number...">
+            </div>
+            <div class="form-group">
+              <label>Route : </label>
+              <input type="text" class="form-control" formControlName="vehicleRoute" placeholder="Route...">
+            </div>
+            <div class="form-group">
+              <label>Date : </label>
+              <input type="date" class="form-control" formControlName="vehicleDate" placeholder="Date...">
+            </div>
+            <div class="form-group">
+              <label>Time : </label>
+              <input type="text" class="form-control" formControlName="vehicleTime" placeholder="Time...">
+            </div>
+
+
+            <div class="modal-footer">
+              <button type="button" id="cancle" class="btn btn-secondary" data-bs-dismiss="modal"
+                (click)="onClose()">Close</button>
+              <button type="submit" class="btn btn-primary">{{formStatus == 'Add' ? 'Add' :'Update'}}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="modal fade" id="exam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Do you want to delete the record ?</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteDetail(vehicle)">Yes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
