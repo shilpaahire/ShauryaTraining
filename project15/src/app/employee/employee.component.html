@@ -1,0 +1,28 @@
+<hr>
+<div>
+    <label>Search Name : </label>
+    <input type="text" class="form-control" [(ngModel)]="textSearch" placeholder="Search Name here..."/>
+    <button class="btn btn-dark" (click)="onDelete()">Delete</button>
+</div>
+{{textSearch}}
+<h3 style="font-weight:bolder;">Employee List</h3>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <th>Empoyee ID</th>
+            <th>Employee Name</th>
+            <th>Address</th>
+            <th>City</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of empData | empFilter:textSearch">
+                <td>{{emp.empid}}</td>
+                <td>{{emp.empname}}</td>
+                <td>{{emp.address}}</td>
+                <td>{{emp.city}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
